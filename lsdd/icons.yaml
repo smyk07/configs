@@ -1,0 +1,22 @@
+name:
+  .trash: 
+  .cargo: 
+  a.out: 
+  .git: 
+extension:
+  go: 󰟓
+  hs: 
+  rs: 
+  py: 
+  bash: 
+  lua: 
+filetype:
+  dir: 
+  file: 📄
+  socket: 󰆨
+  executable: 
+  symlink-dir: 
+  symlink-file: 
+  device-char: 
+  device-block: 󰜫
+  special: 
