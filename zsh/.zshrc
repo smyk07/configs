@@ -13,6 +13,9 @@ fi
 # source / load zinit 
 source "${ZINIT_HOME}/zinit.zsh"
 
+# load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # my plugins 
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -32,6 +35,7 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups 
 setopt hist_find_no_dups
+source <(fzf --zsh)
 
 # load completions 
 autoload -U compinit && compinit
