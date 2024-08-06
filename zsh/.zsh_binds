@@ -1,0 +1,6 @@
+# tmux-sessionizer
+zle_tmux_sessionizer() {
+    ~/.local/bin/tmux-sessionizer
+}
+zle -N zle_tmux_sessionizer
+bindkey '\ef' zle_tmux_sessionizer
