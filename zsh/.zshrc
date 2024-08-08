@@ -19,13 +19,19 @@ source "${ZINIT_HOME}/zinit.zsh"
 # my plugins 
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
 
 # completion styling 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' menu no 
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+
+# fzf config 
+export FZF_DEFAULT_OPTS='--color=spinner:#87AFFF,pointer:#87AFFF,marker:#87AFFF'
 
 # history
 HISTSIZE=5000
-HISTFILE=~/.config/zsh/.zsh_history
+HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase 
 setopt appendhistory 
@@ -55,9 +61,6 @@ export PATH=$PATH:/usr/local/go/bin
 
 # cargo for rust
 . "$HOME/.cargo/env"
-
-# fzf config 
-export FZF_DEFAULT_OPTS='--color=spinner:#87AFFF,pointer:#87AFFF,marker:#87AFFF'
 
 # tmux on startup
 if ! tmux has-session -t smyk 2>/dev/null; then
