@@ -52,15 +52,10 @@ PS1='%F{#87afff}%n@%m%f:%F{#87afff}%(5~|%-1~/⋯/%3~|%4~)%f$ '
 # run nf on startup
 neofetch
 
-# source my aliases and binds
+# source my aliases and binds and built packages
 source ~/.config/zsh/.zsh_aliases
 source ~/.config/zsh/.zsh_binds
-
-# add goland to path
-export PATH=$PATH:/usr/local/go/bin
-
-# cargo for rust
-. "$HOME/.cargo/env"
+source ~/.config/zsh/.zsh_packages
 
 # tmux on startup
 if ! tmux has-session -t smyk 2>/dev/null; then
