@@ -3,7 +3,6 @@ procps/
 nextjs-nodejs/
 go/
 create-next-app-nodejs/
-bpytop/
 htop/
 dconf/
 evolution/
@@ -21,6 +20,7 @@ pop-system-updater/
 pulse/
 enchant/
 gedit/
+yarn/
 touchegg/
 .gsd-keyboard.settings-ported
 gnome-initial-setup-done

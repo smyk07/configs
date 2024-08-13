@@ -1,29 +1,28 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-if [[ $# -eq 1 ]]; then
-  selected=$1
-else
-  selected=$(find /mnt/disk/learning-dir/ /mnt/disk/coding-projects/ /home/ -mindepth 0 -maxdepth 1 -type d | fzf)
-fi
+# Select a directory or use the provided one
+selected=${1:-$(find /mnt/disk/learning-dir/ /mnt/disk/coding-projects/ /home/ -mindepth 0 -maxdepth 1 -type d | fzf)}
 
-if [[ -z $selected ]]; then
-  exit 0
-fi
+# Exit if no directory was selected
+[[ -z $selected ]] && exit 0
 
+# Convert the directory name to a valid session name
 selected_name=$(basename "$selected" | tr . _)
 
-if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-  tmux new-session -ds $selected_name -c $selected
-fi
-
-if ! tmux has-session -t=$selected_name 2>/dev/null; then
-  tmux new-session -ds $selected_name -c $selected
-fi
-
-if [[ -n $TMUX ]]; then
-  tmux switch-client -t $selected_name
+# Check if inside a tmux session
+if [[ -z $TMUX ]]; then
+  # Create a new session or attach to an existing one
+  if ! tmux has-session -t=$selected_name 2>/dev/null; then
+    exec tmux new-session -A -s $selected_name -c "$selected"
+  else
+    exec tmux attach -t $selected_name
+  fi
 else
-  tmux attach -t $selected_name
+  # Switch to an existing session or create a new one
+  if ! tmux has-session -t=$selected_name 2>/dev/null; then
+    tmux new-session -A -ds $selected_name -c "$selected"
+  fi
+  tmux switch-client -t $selected_name
 fi
 
 exit 0
