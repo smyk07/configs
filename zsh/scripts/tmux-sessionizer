@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 # Select a directory or use the provided one
 selected=${1:-$(find /mnt/disk/learning-dir/ /mnt/disk/coding-projects/ /home/ -mindepth 0 -maxdepth 1 -type d | fzf)}
@@ -13,9 +13,9 @@ selected_name=$(basename "$selected" | tr . _)
 if [[ -z $TMUX ]]; then
   # Create a new session or attach to an existing one
   if ! tmux has-session -t=$selected_name 2>/dev/null; then
-    exec tmux new-session -A -s $selected_name -c "$selected"
+    tmux new-session -A -s $selected_name -c "$selected"
   else
-    exec tmux attach -t $selected_name
+    tmux attach -t $selected_name
   fi
 else
   # Switch to an existing session or create a new one

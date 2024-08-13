@@ -8,6 +8,7 @@ alias nvim='~/nvim.appimage'
 
 # alias for tmux
 alias tx=tmux
+alias ts=tmux-sessionizer
 
 # alias for lsd
 alias ls=lsd

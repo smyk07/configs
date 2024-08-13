@@ -29,6 +29,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 # fzf config 
 export FZF_DEFAULT_OPTS='--color=spinner:#87AFFF,pointer:#87AFFF,marker:#87AFFF'
 
+setopt promptsubst
+
 # history
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
