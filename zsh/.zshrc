@@ -51,15 +51,19 @@ autoload -U compinit && compinit
 # my prompt
 PS1='%F{#87afff}%n@%m%f:%F{#87afff}%(5~|%-1~/⋯/%3~|%4~)%f$ '
 
-# run nf on startup
-neofetch
 
 # source my aliases and binds and built packages
 source ~/.config/zsh/.zsh_aliases
 source ~/.config/zsh/.zsh_binds
 source ~/.config/zsh/.zsh_packages
 
+# run nf on startup
+neofetch
+
 # tmux on startup
 if ! tmux has-session -t smyk 2>/dev/null; then
   command tmux new-session -ds smyk
 fi
+
+# kill io.elementary.appcenter
+killall io.elementary.appcenter 2>/dev/null

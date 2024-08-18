@@ -2,9 +2,8 @@
 alias nf=neofetch
 
 # alias for nvim
-alias vi='~/nvim.appimage'
-alias vim='~/nvim.appimage'
-alias nvim='~/nvim.appimage'
+alias vi=nvim
+alias vim=nvim
 
 # alias for tmux
 alias tx=tmux
