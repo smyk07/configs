@@ -108,7 +108,7 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-# monitors
+# monitors please do not move the below two lines, required for changei3conf to work
 set $fm HDMI-1
 set $sm eDP-1
 
