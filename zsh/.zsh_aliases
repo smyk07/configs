@@ -3,7 +3,6 @@ alias nf=neofetch
 
 # alias for nvim
 alias vi=nvim
-alias vim=nvim
 
 # alias for tmux
 alias tx=tmux
