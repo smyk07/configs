@@ -109,8 +109,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # monitors please do not move the below two lines, required for changei3conf to work
-set $fm HDMI-1
-set $sm eDP-1
+set $fm HDMI-0
+set $sm eDP-1-0
 
 # set workspace outputs
 workspace 1 output $fm
@@ -259,6 +259,7 @@ new_window 1pixel
 for_window [class="^.*"] border pixel 0
 
 exec_always --no-startup-id picom --config /home/clix/.config/picom/picom.conf -b -f
+exec_always --no-startup-id xrandr --output eDP-1-0 --right-of HDMI-0 --auto
 exec --no-startup-id nitrogen --restore
 
 # set screenshot key 

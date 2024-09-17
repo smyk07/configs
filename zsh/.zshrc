@@ -67,3 +67,6 @@ fi
 
 # kill io.elementary.appcenter
 killall io.elementary.appcenter 2>/dev/null
+
+# nvim appimage to path 
+export PATH="$PATH:/opt/nvim/"

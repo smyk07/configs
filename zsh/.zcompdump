@@ -1,4 +1,4 @@
-#files: 1276	version: 5.8.1
+#files: 1271	version: 5.8.1
 
 _comps=(
 '-' '_precommand'
@@ -29,7 +29,6 @@ _comps=(
 'add-zsh-hook' '_add-zsh-hook'
 'admin' '_sccs'
 'afew' '_afew'
-'alacritty' '_alacritty'
 'ali' '_mh'
 'alias' '_alias'
 'amaya' '_webbrowser'
@@ -250,8 +249,8 @@ _comps=(
 'cplay' '_cplay'
 'cppcheck' '_cppcheck'
 'cpupower' '_cpupower'
-'createdb' '_pgsql_utils'
-'createuser' '_pgsql_utils'
+'createdb' '_postgresql'
+'createuser' '_postgresql'
 'crontab' '_crontab'
 'crsh' '_cssh'
 'cryptsetup' '_cryptsetup'
@@ -341,8 +340,6 @@ _comps=(
 'dnf-2' '_dnf'
 'dnf-3' '_dnf'
 'doas' '_doas'
-'docker' '_docker'
-'dockerd' '_docker'
 'docpad' '_docpad'
 'domainname' '_yp'
 'do-release-upgrade' '_do-release-upgrade'
@@ -361,8 +358,8 @@ _comps=(
 'dpkg-source' '_dpkg_source'
 'dput' '_dput'
 'drill' '_drill'
-'dropdb' '_pgsql_utils'
-'dropuser' '_pgsql_utils'
+'dropdb' '_postgresql'
+'dropuser' '_postgresql'
 'drush' '_drush'
 'dscverify' '_dscverify'
 'dsh' '_dsh'
@@ -752,7 +749,7 @@ _comps=(
 'info' '_texinfo'
 'infocmp' '_terminals'
 'initctl' '_initctl'
-'initdb' '_pgsql_utils'
+'initdb' '_postgresql'
 'insmod' '_modutils'
 'install' '_install'
 'install-info' '_texinfo'
@@ -937,7 +934,6 @@ _comps=(
 'mere' '_mere'
 'merge' '_rcs'
 'mergechanges' '_mergechanges'
-'meson' '_meson'
 'metaflac' '_flac'
 'mformat' '_mtools'
 'mgv' '_pspdf'
@@ -1050,7 +1046,6 @@ _comps=(
 'nginx' '_nginx'
 'ngrep' '_ngrep'
 'nice' '_nice'
-'ninja' '_ninja'
 'nkf' '_nkf'
 'nl' '_nl'
 'nm' '_nm'
@@ -1141,11 +1136,11 @@ _comps=(
 'pflags' '_pids'
 'pg_config' '_postgresql'
 'pg_ctl' '_postgresql'
-'pg_dump' '_pgsql_utils'
-'pg_dumpall' '_pgsql_utils'
+'pg_dump' '_postgresql'
+'pg_dumpall' '_postgresql'
 'pg_isready' '_postgresql'
 'pgrep' '_pgrep'
-'pg_restore' '_pgsql_utils'
+'pg_restore' '_postgresql'
 'pg_upgrade' '_postgresql'
 'phing' '_phing'
 'php' '_php'
@@ -1238,7 +1233,7 @@ _comps=(
 'psmerge' '_psutils'
 'psmulti' '_postscript'
 'psnup' '_psutils'
-'psql' '_pgsql_utils'
+'psql' '_postgresql'
 'psresize' '_psutils'
 'psselect' '_psutils'
 'pstack' '_pids'
@@ -1316,7 +1311,6 @@ _comps=(
 'restart' '_initctl'
 'retawq' '_webbrowser'
 'rfkill' '_rfkill'
-'rg' '_rg'
 'rgview' '_vim'
 'rgvim' '_vim'
 'ri' '_ri'
@@ -1671,7 +1665,7 @@ _comps=(
 'useradd' '_user_admin'
 'userdel' '_users'
 'usermod' '_user_admin'
-'vacuumdb' '_pgsql_utils'
+'vacuumdb' '_postgresql'
 'val' '_sccs'
 'valgrind' '_valgrind'
 '-value-' '_value'
@@ -1999,7 +1993,6 @@ zle -C _correct_filename .complete-word _correct_filename
 zle -C _correct_word .complete-word _correct_word
 zle -C _expand_alias .complete-word _expand_alias
 zle -C _expand_word .complete-word _expand_word
-zle -C _fzf-tab-apply complete-word _fzf-tab-apply
 zle -C _history-complete-newer .complete-word _history_complete_word
 zle -C _history-complete-older .complete-word _history_complete_word
 zle -C _list_expansions .list-choices _expand_word
@@ -2053,11 +2046,10 @@ autoload -Uz _afew _android _archlinux-java _artisan _atach \
             _tmuxinator _tmuxp _tox _tsc _ts-node \
             _udisksctl _ufw _virtualbox _vnstat _wemux \
             _wg-quick _xsel _yarn _zcash-cli _zinit \
-            _alacritty _apt-manage _bootctl _busctl _bwrap \
-            _curl _docker _dpkg-parsechangelog _fd _fdfind \
-            _flatpak _hostnamectl _journalctl _kernel-install _localectl \
-            _loginctl _meson _networkctl _ninja _pulseaudio \
-            _resolvectl _rg _sd_hosts_or_user_at_host _sd_outputmodes _sd_unit_files \
+            _apt-manage _bootctl _busctl _bwrap _curl \
+            _dpkg-parsechangelog _fd _fdfind _flatpak _hostnamectl \
+            _journalctl _kernel-install _localectl _loginctl _networkctl \
+            _pulseaudio _resolvectl _sd_hosts_or_user_at_host _sd_outputmodes _sd_unit_files \
             _systemctl _systemd _systemd-analyze _systemd-delta _systemd-inhibit \
             _systemd-path _systemd-run _systemd-tmpfiles _timedatectl _udevadm \
             _cdr _floppy _logical_volumes _lscfg _lsdev \
