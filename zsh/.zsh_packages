@@ -1,3 +1,6 @@
+# nvim appimage to path 
+export PATH="$PATH:/opt/nvim/"
+
 # cargo
 . "$HOME/.cargo/env"
 

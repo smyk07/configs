@@ -16,6 +16,8 @@ source "${ZINIT_HOME}/zinit.zsh"
 # load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+autoload -Uz _zinit
+
 # my plugins 
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -67,6 +69,3 @@ fi
 
 # kill io.elementary.appcenter
 killall io.elementary.appcenter 2>/dev/null
-
-# nvim appimage to path 
-export PATH="$PATH:/opt/nvim/"
