@@ -1,3 +1,3 @@
 # My Configs
 
-Here are all my configs.
+Here are all my linux configs.

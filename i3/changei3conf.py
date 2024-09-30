@@ -1,22 +1,16 @@
 #!/usr/bin/python3
 
+import sys
+import shutil
 import subprocess
 
-with open("/home/clix/.config/i3/config", "r") as config:
-    data = config.readlines()
-
-if data[111] == "set $fm HDMI-1\n":
-    data[111] = "set $fm eDP-1\n"
-    data[112] = "set $sm HDMI-1\n"
+if sys.argv[1] == "dual":
+    shutil.copy("/home/clix/.config/i3/dual_config", "/home/clix/.config/i3/config")
+elif sys.argv[1] == "single":
+    shutil.copy("/home/clix/.config/i3/single_config", "/home/clix/.config/i3/config")
 else:
-    data[111] = "set $fm HDMI-1\n"
-    data[112] = "set $sm eDP-1\n"
-
-with open("/home/clix/.config/i3/config", "w") as config:
-    config.writelines(data)
+    pass
 
 subprocess.run("i3 restart", shell=True, executable="/bin/zsh")
 
-print("\nsuccessful: ")
-print(data[111][:-1])
-print(data[112][:-1])
+print("Successful")

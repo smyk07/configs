@@ -59,9 +59,6 @@ source ~/.config/zsh/.zsh_aliases
 source ~/.config/zsh/.zsh_binds
 source ~/.config/zsh/.zsh_packages
 
-# run nf on startup
-neofetch
-
 # tmux on startup
 if ! tmux has-session -t smyk 2>/dev/null; then
   command tmux new-session -ds smyk
@@ -69,3 +66,6 @@ fi
 
 # kill io.elementary.appcenter
 killall io.elementary.appcenter 2>/dev/null
+
+# run nf on startup
+neofetch
