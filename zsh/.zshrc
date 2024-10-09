@@ -1,6 +1,11 @@
 # add this to ~/.zshenv 
 # ZDOTDIR=~/.config/zsh
 
+# fzf configuration
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS='--color=spinner:#87AFFF,pointer:#87AFFF,marker:#87AFFF'
+source <(fzf --zsh)
+
 # set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 
@@ -13,9 +18,6 @@ fi
 # source / load zinit 
 source "${ZINIT_HOME}/zinit.zsh"
 
-# load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 autoload -Uz _zinit
 
 # my plugins 
@@ -25,15 +27,13 @@ zinit light Aloxaf/fzf-tab
 
 # completion styling 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-zstyle ':completion:*' menu no 
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-
-# fzf config 
-export FZF_DEFAULT_OPTS='--color=spinner:#87AFFF,pointer:#87AFFF,marker:#87AFFF'
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:*' fzf-flags --color=spinner:#87AFFF,pointer:#87AFFF,marker:#87AFFF --bind=tab:accept
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls $realpath'
 
 setopt promptsubst
 
-# history
+# zsh history
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
@@ -45,7 +45,8 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups 
 setopt hist_find_no_dups
-source <(fzf --zsh)
+
+
 
 # load completions 
 autoload -U compinit && compinit
