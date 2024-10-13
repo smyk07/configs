@@ -1,6 +1,9 @@
 # add this to ~/.zshenv 
 # ZDOTDIR=~/.config/zsh
 
+# setting enviroment variables
+source ~/.config/zsh/.zsh_env
+
 # fzf configuration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--color=spinner:#87AFFF,pointer:#87AFFF,marker:#87AFFF'
@@ -55,7 +58,7 @@ autoload -U compinit && compinit
 PS1='%F{#87afff}%n@%m%f:%F{#87afff}%(5~|%-1~/⋯/%3~|%4~)%f$ '
 
 
-# source my aliases and binds and built packages
+# source other zsh files
 source ~/.config/zsh/.zsh_aliases
 source ~/.config/zsh/.zsh_binds
 source ~/.config/zsh/.zsh_packages
