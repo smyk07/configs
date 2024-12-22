@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Select a directory or use the provided one
-selected=${1:-$(find ~/Documents/coding-projects/ ~/Documents/learning-dir/ /home/ -mindepth 0 -maxdepth 1 -type d | fzf)}
+selected=${1:-$(find ~/Documents/coding-projects/ ~/Documents/learning-dir/ ~/Documents/cloned-repos/ /home/ -mindepth 0 -maxdepth 1 -type d | fzf)}
 
 # Exit if no directory was selected
 [[ -z $selected ]] && exit 0
