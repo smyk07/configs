@@ -49,14 +49,11 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups 
 setopt hist_find_no_dups
 
-
-
 # load completions 
 autoload -U compinit && compinit
 
 # my prompt
 PS1='%F{#87afff}%n@%m%f:%F{#87afff}%(5~|%-1~/⋯/%3~|%4~)%f$ '
-
 
 # source other zsh files
 source ~/.config/zsh/.zsh_aliases
@@ -65,7 +62,7 @@ source ~/.config/zsh/.zsh_packages
 
 # tmux on startup
 if ! tmux has-session -t smyk 2>/dev/null; then
-  command tmux new-session -ds smyk
+  command tmux new-session -ds smyk && tmux a
 fi
 
 # kill io.elementary.appcenter
