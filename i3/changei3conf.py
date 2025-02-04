@@ -4,19 +4,24 @@ import sys
 import shutil
 import subprocess
 
-if sys.argv[1] == "dualh":
-    shutil.copy(
-        "/home/clix/.config/i3/dual_horizontal_config", "/home/clix/.config/i3/config"
-    )
-elif sys.argv[1] == "dualv":
-    shutil.copy(
-        "/home/clix/.config/i3/dual_vertical_config", "/home/clix/.config/i3/config"
-    )
-elif sys.argv[1] == "single":
-    shutil.copy("/home/clix/.config/i3/single_config", "/home/clix/.config/i3/config")
-else:
-    pass
+configs = {
+    "dualh": "dual_horizontal_config",
+    "dualv": "dual_vertical_config",
+    "single": "single_config",
+}
 
-subprocess.run("i3 restart", shell=True, executable="/bin/zsh")
 
-print("Successful")
+def change_config(arg: str):
+    shutil.copy(f"/home/clix/.config/i3/{configs[arg]}", "/home/clix/.config/i3/config")
+
+
+change_config(sys.argv[1])
+
+
+subprocess.run(
+    "i3 restart",
+    shell=True,
+    executable="/bin/zsh",
+    stdout=subprocess.DEVNULL,
+    stderr=subprocess.STDOUT,
+)
