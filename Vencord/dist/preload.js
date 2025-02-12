@@ -1,4 +1,4 @@
-// Vencord 6cccb54
+// Vencord fcf8690
 // Standalone: true
 // Platform: Universal
 // Updater Disabled: false
