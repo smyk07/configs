@@ -1,32 +1,21 @@
 # alias for neofetch
 alias nf=neofetch
 
+# alias for bpytop
+alias bt=bpytop
+
 # alias for nvim
 alias vi=nvim
 
 # alias for tmux
 alias tx=tmux
-alias ts=tmux-sessionizer
 
 # alias for lsd
 alias ls=lsd
 alias la="lsd -a"
-
-# alias for gparted
-alias gparted="sudo gparted"
 
 # alias for cmatrix
 cm() {
   command cmatrix -C blue
   return
 }
-
-# alias for rm
-# rm() {
-# if [[ "$1" = '-notrash' ]]; then
-#     shift
-#     command rm "${@}"
-#     return
-#   fi
-#   command echo "Use trash-cli instead, or force with rm -notrash"
-# }
