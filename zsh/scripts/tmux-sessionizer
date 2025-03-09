@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+# Select a directory or use the provided one
+selected=${1:-$(find ~/Documents/coding-projects/ ~/Documents/learning-dir/ ~/Documents/cloned-repos/ /home/ -mindepth 0 -maxdepth 1 -type d | fzf)}
+
+# Exit if no directory was selected
+[[ -z $selected ]] && exit 0
+
+# Convert the directory name to a valid session name
+selected_name=$(basename "$selected" | tr . _)
+
+# Check if inside a tmux session
+if [[ -z $TMUX ]]; then
+  # Create a new session or attach to an existing one
+  if ! tmux has-session -t=$selected_name 2>/dev/null; then
+    command tmux new-session -A -s $selected_name -c "$selected"
+  else
+    command tmux attach -t $selected_name
+  fi
+else
+  # Switch to an existing session or create a new one
+  if ! tmux has-session -t=$selected_name 2>/dev/null; then
+    command tmux new-session -A -ds $selected_name -c "$selected"
+  fi
+  command tmux switch-client -t $selected_name
+fi
+
+exit 0

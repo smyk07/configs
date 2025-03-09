@@ -1,0 +1,6 @@
+# tmux-sessionizer
+zle_tmux_sessionizer() {
+  ~/.config/zsh/scripts/tmux-sessionizer
+}
+zle -N tmux_sessionizer_widget zle_tmux_sessionizer
+bindkey '^[f' tmux_sessionizer_widget

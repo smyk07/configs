@@ -1,0 +1,21 @@
+# alias for neofetch
+alias nf=neofetch
+
+# alias for bpytop
+alias bt=bpytop
+
+# alias for nvim
+alias vi=nvim
+
+# alias for tmux
+alias tx=tmux
+
+# alias for lsd
+alias ls=lsd
+alias la="lsd -a"
+
+# alias for cmatrix
+cm() {
+  command cmatrix -C blue
+  return
+}
