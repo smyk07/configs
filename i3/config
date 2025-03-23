@@ -257,7 +257,7 @@ client.unfocused        #333333 #222222 #87afff #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
-
+                  e
 # do not show title bar
 new_window 1pixel
 for_window [class="^.*"] border pixel 0
@@ -266,3 +266,7 @@ exec --no-startup-id nitrogen --restore
 
 # set screenshot key 
 bindsym $mod+s exec "sleep 1 && import ~/Pictures/ss.png && xclip -selection clipboard -t image/png <~/Pictures/ss.png"
+
+# set config change key 
+bindsym $mod+v exec "changei3conf dualh"
+bindsym $mod+Shift+v exec "changei3conf single"

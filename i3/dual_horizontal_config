@@ -266,3 +266,7 @@ exec --no-startup-id nitrogen --restore
 
 # set screenshot key 
 bindsym $mod+s exec "sleep 1 && import ~/Pictures/ss.png && xclip -selection clipboard -t image/png <~/Pictures/ss.png"
+
+# set config change key 
+bindsym $mod+v exec "changei3conf dualv"
+bindsym $mod+Shift+v exec "changei3conf single"
